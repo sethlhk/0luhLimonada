@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">luhLimonada</string>
+    <string name="limoeiro">" toque e colha o limão"</string>
+    <string name="limao" >"toque até expremer o limão" </string>
+    <string name="limonada">" toque e beba a limonada"</string>
+    <string name="vazio">"toque pra recomeçar"</string>
+</resources>
