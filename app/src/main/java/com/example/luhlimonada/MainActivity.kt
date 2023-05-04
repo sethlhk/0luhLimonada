@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -45,20 +46,49 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun limoeiro(){
 
+    var photo = 1
+
+    when (photo){
+
+        1-> Conteudo(
+            R.string.limoeira,
+            R.drawable.limoeiro,
+            clickImage =
+        )
+        2-> Conteudo(
+            R.string.limao,
+            R.drawable.limao_expremer
+        )
+        3-> Conteudo(
+            R.string.limonada,
+            R.drawable.limonada
+        )
+        4-> Conteudo(
+            R.string.vazio,
+            R.drawable.limao_recomecar
+        )
+
+    }
+
+}
+
+@Composable
+fun Conteudo(recursoTextoId:Int, recursoImagemId: Int, clickImage:() ->Unit){
     Column  (
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-            ){
+    ){
         Text(
-            text = stringResource(R.string.limoeiro)
-                     , fontSize =  30.sp
+            text = stringResource(recursoTextoId)
+            , fontSize =  30.sp
         )
 
         Image(
-            painter = painterResource(id = R.drawable.limoeiro) ,
+            painter = painterResource(id =recursoImagemId) ,
             contentDescription = null,
             modifier = Modifier
                 .size(350.dp)
@@ -66,7 +96,7 @@ fun limoeiro(){
                     BorderStroke(4.dp, Color.Cyan),
                     RoundedCornerShape(10.dp)
                 )
-
+                .clickable(onClick = )
 
         )
 
